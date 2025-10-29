@@ -15,11 +15,3 @@ root_agent = llm_agent.Agent(
     tools=[web_search.web_search, google_search.google_search, code_execution],
     sub_agents=[],
 )
-
-language_agent = llm_agent.Agent(
-    model='gemini-2.5-flash',
-    name='language_agent',
-    description="A helpful assistant that checks the language of the answer.",
-    instruction="You are a helpful agent that ensures the answers provided are grammatically correct and well-structured. When given a sentence, you will rewrite it to improve grammar and clarity.",
-    tools=[google_search.google_search]
-)

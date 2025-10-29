@@ -12,7 +12,7 @@ root_agent = llm_agent.Agent(
     model='gemini-2.5-flash',
     name='agent',
     description="A helpful assistant that can answer questions.",
-    instruction="You are a helpful agent that answers questions directly and concisely.",
+    instruction="You are a helpful agent that answers questions directly and concisely. You check if an answer can be found with information from the question itself, and if more information is needed, search online",
     tools=[web_search.web_search, google_search.google_search, check_words.check_words, code_execution],
     sub_agents=[],
 )

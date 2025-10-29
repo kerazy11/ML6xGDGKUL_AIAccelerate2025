@@ -13,14 +13,12 @@ root_agent = llm_agent.Agent(
     description="A helpful assistant that can answer questions.",
     instruction="""You are a helpful agent that answers questions directly and concisely.
     Follow the instructions carefully to provide the best possible answer:
-    1. Check if an answer can be found with information from the question itself
-    2. If more information is needed, search online using google_search
+    1. If the question doesn't ask for information beyond what is provided, answer directly using code_execution and go to step 6.
+    2. If information not included in the question is required, search online using google_search
     3. Use web_fetch to check the content of the pages
-    4. Analyze the contents of the pages using code_execution if necessary
-    5. Provide a final answer based on the information gathered
-    Make sure your answer is properly spaced and grammatically correct if a sentence answer is required. """,
+    4. Analyze the contents of the pages using code_execution
+    5. Come up with a final answer based on the information gathered
+    6. Once all steps are finished and an answer is created, always make sure your answer is properly spaced and grammatically correct if a sentence answer is required. """,
     tools=[google_search, code_execution, web_fetch],
-    instruction="You are a helpful agent that answers questions directly and concisely. You check if an answer can be found with information from the question itself, and if more information is needed, search online using google_search and use web_fetch to check the content of the pages. Make sure your answer is properly spaced and grammatically correct if a sentence answer is required. ",
-    tools=[web_search.web_search, google_search, web_fetch, code_execution],
     sub_agents=[],
 )

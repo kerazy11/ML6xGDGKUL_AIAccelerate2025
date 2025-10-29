@@ -6,7 +6,6 @@ The `root_agent` is used to evaluate your agent's performance.
 from google.adk.agents import llm_agent
 from my_agent.tools import web_search
 from google.adk.tools import google_search, code_execution
-from my_agent.tools import check_words
 
 root_agent = llm_agent.Agent(
     model='gemini-2.5-flash',
